@@ -307,6 +307,10 @@ public:
     pre->next = nullptr;
   }
 
+  T &operator[](size_t pos) {
+    return this->at(pos);
+  }
+
   T &at(size_t pos) {
     this->range_check(pos);
     auto p = this->step(pos);
@@ -315,6 +319,13 @@ public:
 
   iterator insert(const iterator &it, T &d) {
     (*it)->insert(d);
+  }
+
+  template <typename F>
+  void apply(F const &f) {
+    for (auto &p : *this) {
+      f(p);
+    }
   }
 };
 
