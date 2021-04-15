@@ -49,9 +49,9 @@ public:
 
     explicit iterator_shared_ptr(std::shared_ptr<T> &d) : node(d) {}
 
-    ref operator*() { return *node; }
+//    virtual ref operator*() { return *node; }
 
-    ptr operator->() { return &(operator*()); }
+//    virtual ptr operator->() { return &(operator*()); }
 
     // ++it
     virtual self &operator++() = 0;

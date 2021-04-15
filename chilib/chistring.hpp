@@ -82,9 +82,9 @@ public:
     }
   };
 
-  iterator begin() { return iterator(*this->mdata); }
+  iterator begin() const  { return iterator(*this->mdata); }
 
-  iterator end() { return iterator(*(this->mdata + this->length())); }
+  iterator end() const { return iterator(*(this->mdata + this->length())); }
 
   // 字符串赋值
   string &operator=(const string &str) {
